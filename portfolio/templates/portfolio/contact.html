@@ -1,0 +1,25 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center my-3">
+  <div class="col-4">
+    <img src="{% static 'portfolio/me.jpg' %}" class="img-fluid">
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-20 text-center">
+    <h1 id="hometext" class="font-weight-bold">Contact me!</h1>
+    Mobile: <a href="tel:+420739942385">+420 739 942 385</a><br>
+    Email: <a href = "mailto: martinczarkowski@gmail.com">martinczarkowski@gmail.com</a><br>
+    
+    <a href = "https://www.linkedin.com/in/martin-czarkowski-4252828b/" target="_blank">LinkedIn</a>
+    <a href = "https://www.linkedin.com/in/martin-czarkowski-4252828b/" target="_blank">GitHub</a>
+  </div>
+</div>
+
+
+{% endblock %}
