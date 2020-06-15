@@ -8,5 +8,14 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+class Messages(models.Model):
+    created = models.DateField(auto_now_add=True)
+    subject = models.CharField(max_length=250)
+    message = models.TextField(blank=True)
+    from_email = models.CharField(max_length=250)
+    
+    def __str__(self):
+        return self.subject
     
 
