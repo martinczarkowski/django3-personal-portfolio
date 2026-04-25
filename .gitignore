@@ -1,0 +1,14 @@
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+/db/*.sqlite3
+__pycache__/
+local_settings.py
+/static/
+venv/
+media/
+.env
+Thumbs.db
+.DS_Store

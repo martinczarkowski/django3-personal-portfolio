@@ -1,0 +1,48 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center my-3">
+  <div class="col-4">
+    <img src="{% static 'portfolio/me.jpg' %}" class="img-fluid">
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-20 text-center">
+    <h1 id="hometext" class="font-weight-bold"> Hi, I’m Martin! </h1>
+    <h2 class="mt-5">I love sports, dance, music, technology and my beatiful daughter!</h2><br>
+    <p> 
+    I was born in Brno Czech Republic and I also live and work here. It's the best place to live!
+    I have been working as a software developer for several years (T-SQL, PL/SQL, PL/pgSQL) at TietoEVRY
+    </p>
+    <p>
+    I enjoy working with these technologies PostreSQL - PL/pgSQL, Oracle - PL/SQL, MS SQL SERVER, Python - Django, GIT, TFS, Jira, Confluence, Fedora
+    </p>
+  </div>
+</div>
+
+<h2 class="mt-5">Portfolio</h2>
+<hr>
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
+
+    {% if project.url %}
+    <a href="{{ project.url }}">
+      <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    </a>
+    {% else %}
+
+    <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    {% endif %}
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.description }}</p>
+
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
