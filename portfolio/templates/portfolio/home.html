@@ -12,7 +12,7 @@
 
 <div class="row justify-content-center mb-3">
   <div class="col-md-20 text-center">
-    <h1 id="hometext" class="font-weight-bold"> Hi, I’m Martin! </h1>
+    <h1 id="hometext" class="fw-bold"> Hi, I’m Martin! </h1>
     <h2 class="mt-5">I love sports, dance, music, technology and my beatiful daughter!</h2><br>
     <p> 
     I was born in Brno Czech Republic and I also live and work here. It's the best place to live!
@@ -42,6 +42,21 @@
     <p>{{ project.description }}</p>
 
   </div>
+  {% endfor %}
+</div>
+
+
+<h2 class="mt-5">Blog</h2>
+<hr>
+<div class="row">
+  {% for blog in blogs %}
+  <div class="col-lg-4 col-md-6 mb-4">
+    <h4><a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a></h4>
+    <small class="text-muted">{{ blog.date }}</small>
+    <p>{{ blog.description|truncatewords:30 }}</p>
+  </div>
+  {% empty %}
+  <p class="text-muted">Zatím žádné příspěvky.</p>
   {% endfor %}
 </div>
 

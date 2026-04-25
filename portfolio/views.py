@@ -2,10 +2,12 @@ from django.shortcuts import render
 from .models import Project, Messages
 from .forms import MessageForm
 from django.core.mail import send_mail
+from blog.models import Blog
 
 def home(request):
     projects = Project.objects.all()
-    return render(request, 'portfolio/home.html', {'projects':projects })
+    blogs = Blog.objects.order_by('-date')[:3]
+    return render(request, 'portfolio/home.html', {'projects': projects, 'blogs': blogs})
 
 def contact(request):
     if request.method == 'GET':
