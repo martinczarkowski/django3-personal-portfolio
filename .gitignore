@@ -9,6 +9,7 @@ local_settings.py
 /static/
 venv/
 media/
+!media/portfolio/images/
 .env
 Thumbs.db
 .DS_Store
