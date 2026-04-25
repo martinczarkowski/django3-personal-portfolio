@@ -60,7 +60,7 @@ TRANSLATIONS = {
 
         # Todo
         'todo_tagline': 'Life is busy. We get it.',
-        'todo_desc': 'Todo Woo helps you focus on what actually matters.',
+        'todo_desc': 'helps you focus on what actually matters.',
         'todo_start': 'Get started',
         'todo_have_account': 'Already have an account?',
         'todo_login_link': 'Log in',
@@ -122,8 +122,8 @@ TRANSLATIONS = {
         'lang_switch_title': 'Switch to English',
 
         # Hero
-        'hero_comment': '// zdravím světe',
-        'hero_title': "Ahoj, jsem Martin!",
+        'hero_comment': '// hello world',
+        'hero_title': "Ahoj, já su Martin!",
         'hero_tagline': "Něco jako křížení datového architekta s vývojářem, ochucené trochou manažerských dovedností.",
         'hero_role': "Databázový a backendový vývojář v Safetice &middot; Brno, Česká republika",
         'hero_desc': "Stavím databázová a backendová řešení pro enterprise bezpečnostní software — od komplexních migrací po výkonnostní optimalizace řízené telemetrií.",
@@ -173,7 +173,7 @@ TRANSLATIONS = {
 
         # Todo
         'todo_tagline': 'Život je rušný. Chápeme to.',
-        'todo_desc': 'Todo Woo vám pomůže soustředit se na to, co skutečně záleží.',
+        'todo_desc': 'vám pomůže soustředit se na to, co skutečně záleží.',
         'todo_start': 'Začít',
         'todo_have_account': 'Máte už účet?',
         'todo_login_link': 'Přihlaste se',

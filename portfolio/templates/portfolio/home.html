@@ -50,8 +50,8 @@
       <img src="{{ project.image.url }}" class="card-img-top" style="object-fit: cover; height: 200px;">
       {% endif %}
       <div class="card-body">
-        <h5 class="card-title fw-semibold">{{ project.title }}</h5>
-        <p class="card-text text-muted">{{ project.description }}</p>
+        <h5 class="card-title fw-semibold">{% if lang == 'cs' and project.title_cs %}{{ project.title_cs }}{% else %}{{ project.title }}{% endif %}</h5>
+        <p class="card-text text-muted">{% if lang == 'cs' and project.description_cs %}{{ project.description_cs }}{% else %}{{ project.description }}{% endif %}</p>
       </div>
       {% if project.url %}
       <div class="card-footer pb-3">
