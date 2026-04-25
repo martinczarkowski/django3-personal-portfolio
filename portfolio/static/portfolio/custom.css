@@ -3,12 +3,13 @@
   --bg:        #0d1117;
   --surface:   #161b22;
   --border:    #30363d;
-  --text:      #e6edf3;
-  --muted:     #8b949e;
-  --green:     #3fb950;
-  --blue:      #58a6ff;
-  --red:       #f85149;
-  --yellow:    #d29922;
+  --text:      #cdd9e5;
+  --muted:     #768390;
+  --green:     #238636;
+  --green-text:#57ab5a;
+  --blue:      #4184e4;
+  --red:       #e5534b;
+  --yellow:    #c69026;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
 
 /* ── Links ── */
 a { color: var(--blue); }
-a:hover { color: var(--green); }
+a:hover { color: var(--green-text); }
 
 /* ── Navbar ── */
 #topNav {
@@ -31,7 +32,7 @@ a:hover { color: var(--green); }
   color: var(--muted) !important;
   font-size: 0.85rem;
 }
-.navbar-nav .nav-link:hover { color: var(--green) !important; }
+.navbar-nav .nav-link:hover { color: var(--green-text) !important; }
 
 /* ── Cards ── */
 .card {
@@ -97,7 +98,7 @@ a:hover { color: var(--green); }
 .badge.bg-dark {
   background-color: var(--bg) !important;
   border: 1px solid var(--border);
-  color: var(--green) !important;
+  color: var(--green-text) !important;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
 }
@@ -107,20 +108,20 @@ a:hover { color: var(--green); }
 /* ── Section headers ── */
 h2.section-title::before {
   content: '// ';
-  color: var(--green);
+  color: var(--green-text);
 }
 
 /* ── Hero ── */
 .hero-prompt::before {
   content: '$ ';
-  color: var(--green);
+  color: var(--green-text);
 }
 
 /* Typing cursor */
 .typing-cursor::after {
   content: '|';
   animation: blink 1s step-end infinite;
-  color: var(--green);
+  color: var(--green-text);
 }
 @keyframes blink {
   50% { opacity: 0; }
@@ -153,7 +154,7 @@ hr { border-color: var(--border) !important; opacity: 1; }
 .text-muted { color: var(--muted) !important; }
 .text-dark  { color: var(--text) !important; }
 .bg-light   { background-color: var(--bg) !important; }
-code        { color: var(--green); background: var(--bg); padding: 2px 6px; border-radius: 4px; }
+code        { color: var(--green-text); background: var(--bg); padding: 2px 6px; border-radius: 4px; }
 
 h1, h2, h3, h4, h5, h6 { color: var(--text) !important; }
 
@@ -188,7 +189,7 @@ h1, h2, h3, h4, h5, h6 { color: var(--text) !important; }
 .alert-success {
   background-color: rgba(63,185,80,0.1) !important;
   border-color: var(--green) !important;
-  color: var(--green) !important;
+  color: var(--green-text) !important;
 }
 
 /* ── Responsive font ── */
@@ -199,7 +200,7 @@ h1, h2, h3, h4, h5, h6 { color: var(--text) !important; }
 }
 
 /* ── Password display ── */
-#passwordText { color: var(--green) !important; font-size: 1.4rem; }
+#passwordText { color: var(--green-text) !important; font-size: 1.4rem; }
 
 /* ── Select ── */
 select option { background-color: var(--surface); color: var(--text); }
