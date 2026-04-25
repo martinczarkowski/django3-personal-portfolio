@@ -7,13 +7,15 @@
 <!-- Hero -->
 <div class="row align-items-center py-5 my-3">
   <div class="col-md-3 text-center mb-4 mb-md-0">
-    <img src="{% static 'portfolio/me.jpg' %}" class="img-fluid rounded-circle shadow" style="max-width: 180px;">
+    <img src="{% static 'portfolio/me.jpg' %}" class="img-fluid rounded-circle" style="max-width: 180px; border: 3px solid #3fb950;">
   </div>
   <div class="col-md-9">
-    <h1 class="fw-bold mb-2">Hi, I'm Martin!</h1>
-    <p class="lead text-muted mb-3">Passionate about all things data.</p>
-    <p class="mb-2">Database & Backend Developer based in Brno, Czech Republic. Working at Safetica with a focus on SQL Server, PostgreSQL, Entity Framework and C#.</p>
-    <div class="d-flex gap-2 mt-3 mb-3">
+    <p class="mb-1" style="color:#8b949e; font-size:0.85rem;">// hello world</p>
+    <h1 class="fw-bold mb-2" id="hometext">Hi, I'm Martin <span class="typing-cursor"></span></h1>
+    <p class="mb-2 hero-prompt" style="color:#8b949e;">Passionate about all things data.</p>
+    <p class="mb-3" style="color:#8b949e; font-size:0.9rem;">Database &amp; Backend Developer at Safetica · Brno, Czech Republic<br>
+    Focus on SQL Server, PostgreSQL, Entity Framework and C#.</p>
+    <div class="d-flex gap-2 mb-3">
       <a href="{% static 'portfolio/cv_czarkowski_en.pdf' %}" target="_blank" class="btn btn-dark btn-sm">Download CV (EN)</a>
       <a href="{% static 'portfolio/cv_czarkowski_cz.pdf' %}" target="_blank" class="btn btn-outline-dark btn-sm">Download CV (CZ)</a>
     </div>
@@ -33,12 +35,12 @@
 
 <!-- Portfolio -->
 {% if projects %}
-<h2 class="fw-bold mt-4 mb-1">Portfolio</h2>
+<h2 class="fw-bold mt-4 mb-1 section-title">Portfolio</h2>
 <hr class="mb-4">
 <div class="row g-4">
   {% for project in projects %}
   <div class="col-lg-4 col-md-6">
-    <div class="card h-100 border-0 shadow-sm">
+    <div class="card h-100">
       {% if project.url %}
       <a href="{{ project.url }}" target="_blank">
         <img src="{{ project.image.url }}" class="card-img-top" style="object-fit: cover; height: 200px;">
@@ -51,7 +53,7 @@
         <p class="card-text text-muted">{{ project.description }}</p>
       </div>
       {% if project.url %}
-      <div class="card-footer bg-transparent border-0 pb-3">
+      <div class="card-footer pb-3">
         <a href="{{ project.url }}" target="_blank" class="btn btn-sm btn-outline-dark">View project</a>
       </div>
       {% endif %}
@@ -63,20 +65,20 @@
 
 <!-- Blog -->
 {% if blogs %}
-<h2 class="fw-bold mt-5 mb-1">Latest from blog</h2>
+<h2 class="fw-bold mt-5 mb-1 section-title">Latest from blog</h2>
 <hr class="mb-4">
 <div class="row g-4">
   {% for blog in blogs %}
   <div class="col-lg-4 col-md-6">
-    <div class="card h-100 border-0 shadow-sm">
+    <div class="card h-100">
       <div class="card-body">
         <small class="text-muted">{{ blog.date }}</small>
         <h5 class="card-title fw-semibold mt-1">
-          <a href="{% url 'blog:detail' blog.id %}" class="text-dark text-decoration-none">{{ blog.title }}</a>
+          <a href="{% url 'blog:detail' blog.id %}" class="text-decoration-none" style="color:#58a6ff;">{{ blog.title }}</a>
         </h5>
         <p class="card-text text-muted">{{ blog.description|striptags|truncatewords:25 }}</p>
       </div>
-      <div class="card-footer bg-transparent border-0 pb-3">
+      <div class="card-footer pb-3">
         <a href="{% url 'blog:detail' blog.id %}" class="btn btn-sm btn-outline-dark">Read more</a>
       </div>
     </div>

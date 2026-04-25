@@ -1,24 +1,203 @@
-.navbar-nav .nav-link {
-    color: rgba(0,0,0,1) !important;
-}
-
-.navbar-nav .nav-link:hover {
-    color: rgba(0,0,0,.5) !important;
+/* ── Base ── */
+:root {
+  --bg:        #0d1117;
+  --surface:   #161b22;
+  --border:    #30363d;
+  --text:      #e6edf3;
+  --muted:     #8b949e;
+  --green:     #3fb950;
+  --blue:      #58a6ff;
+  --red:       #f85149;
+  --yellow:    #d29922;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
 }
 
-#blogtitle {
-    font-size: 6rem;
+/* ── Links ── */
+a { color: var(--blue); }
+a:hover { color: var(--green); }
+
+/* ── Navbar ── */
+#topNav {
+  background-color: var(--surface) !important;
+  border-bottom: 1px solid var(--border);
 }
 
+.navbar-nav .nav-link {
+  color: var(--muted) !important;
+  font-size: 0.85rem;
+}
+.navbar-nav .nav-link:hover { color: var(--green) !important; }
+
+/* ── Cards ── */
+.card {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px;
+}
+
+.card-footer {
+  background-color: var(--surface) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+/* Terminal window dots */
+.card-body::before {
+  content: '● ● ●';
+  display: block;
+  color: var(--border);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+}
+
+/* ── Buttons ── */
+.btn-dark {
+  background-color: var(--green) !important;
+  border-color: var(--green) !important;
+  color: #000 !important;
+  font-weight: 700;
+}
+.btn-dark:hover {
+  background-color: #2ea043 !important;
+  border-color: #2ea043 !important;
+}
+
+.btn-outline-dark {
+  border-color: var(--border) !important;
+  color: var(--muted) !important;
+}
+.btn-outline-dark:hover {
+  background-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+.btn-primary {
+  background-color: var(--green) !important;
+  border-color: var(--green) !important;
+  color: #000 !important;
+  font-weight: 700;
+}
+.btn-primary:hover { background-color: #2ea043 !important; }
+
+.btn-outline-secondary {
+  border-color: var(--border) !important;
+  color: var(--muted) !important;
+}
+.btn-outline-secondary:hover {
+  background-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* ── Badges ── */
+.badge.bg-dark {
+  background-color: var(--bg) !important;
+  border: 1px solid var(--border);
+  color: var(--green) !important;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+.badge.bg-dark::before { content: '<'; }
+.badge.bg-dark::after  { content: ' />'; }
+
+/* ── Section headers ── */
+h2.section-title::before {
+  content: '// ';
+  color: var(--green);
+}
+
+/* ── Hero ── */
+.hero-prompt::before {
+  content: '$ ';
+  color: var(--green);
+}
+
+/* Typing cursor */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--green);
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ── Forms ── */
+.form-control, .form-select, .form-range {
+  background-color: var(--bg) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--green) !important;
+  box-shadow: 0 0 0 2px rgba(63,185,80,0.2) !important;
+}
+.form-control::placeholder { color: var(--muted) !important; }
+.form-label { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ── Form check (toggle switch) ── */
+.form-check-input:checked {
+  background-color: var(--green) !important;
+  border-color: var(--green) !important;
+}
+.form-check-label { color: var(--text); }
+
+/* ── HR ── */
+hr { border-color: var(--border) !important; opacity: 1; }
+
+/* ── Text utils ── */
+.text-muted { color: var(--muted) !important; }
+.text-dark  { color: var(--text) !important; }
+.bg-light   { background-color: var(--bg) !important; }
+code        { color: var(--green); background: var(--bg); padding: 2px 6px; border-radius: 4px; }
+
+/* ── Footer ── */
+.footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.footer::before {
+  content: '/* ';
+}
+.footer p::after {
+  content: ' */';
+  color: var(--muted);
+}
+
+/* ── List group (todo) ── */
+.list-group-item {
+  background-color: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* ── Alert ── */
+.alert-danger {
+  background-color: rgba(248,81,73,0.1) !important;
+  border-color: var(--red) !important;
+  color: var(--red) !important;
+}
+.alert-success {
+  background-color: rgba(63,185,80,0.1) !important;
+  border-color: var(--green) !important;
+  color: var(--green) !important;
+}
+
+/* ── Responsive font ── */
 @media (min-width: 992px) {
-    #hometext {
-        font-size: 4rem;
-    }
-    #blogdetailtitle {
-        font-size: 5rem;
-    }
+  #hometext      { font-size: 3rem; }
+  #blogdetailtitle { font-size: 2.5rem; }
+  #blogtitle     { font-size: 3rem; }
 }
+
+/* ── Password display ── */
+#passwordText { color: var(--green) !important; font-size: 1.4rem; }
+
+/* ── Select ── */
+select option { background-color: var(--surface); color: var(--text); }
