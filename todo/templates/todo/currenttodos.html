@@ -7,20 +7,20 @@
 
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h2 class="fw-bold mb-0">
-        {% if todos %}{{ todos.count }} current todo{{ todos.count|pluralize }}{% else %}Current todos{% endif %}
+        {% if todos %}{{ todos.count }} {% if todos.count == 1 %}{{ t.todo_singular }}{% else %}{{ t.todo_plural }}{% endif %}{% else %}{{ t.todo_current_title }}{% endif %}
       </h2>
-      <a href="{% url 'createtodo' %}" class="btn btn-warning fw-semibold">+ New todo</a>
+      <a href="{% url 'createtodo' %}" class="btn btn-dark fw-semibold">{{ t.todo_new_btn }}</a>
     </div>
 
     {% if todos %}
     <div class="d-flex flex-column gap-2">
       {% for todo in todos %}
       <a href="{% url 'viewtodo' todo.id %}" class="text-decoration-none">
-        <div class="card border-0 shadow-sm {% if todo.important %}border-start border-danger border-3{% endif %}">
+        <div class="card {% if todo.important %}border-start border-danger border-3{% endif %}">
           <div class="card-body py-3 d-flex justify-content-between align-items-center">
             <div>
               {% if todo.important %}<span class="badge bg-danger me-2">!</span>{% endif %}
-              <span class="fw-semibold text-dark">{{ todo.title }}</span>
+              <span class="fw-semibold">{{ todo.title }}</span>
               {% if todo.memo %}<span class="text-muted ms-2 small">— {{ todo.memo|truncatechars:40 }}</span>{% endif %}
             </div>
             <span class="text-muted small">›</span>
@@ -31,12 +31,12 @@
     </div>
 
     {% else %}
-    <div class="card border-0 shadow-sm text-center p-5">
+    <div class="card text-center p-5">
       <div style="font-size: 2.5rem;">🎉</div>
-      <h4 class="fw-bold mt-3">All clear!</h4>
-      <p class="text-muted">You have no pending todos. Nice work.</p>
+      <h4 class="fw-bold mt-3">{{ t.todo_current_empty_title }}</h4>
+      <p class="text-muted">{{ t.todo_current_empty_desc }}</p>
       <div>
-        <a href="{% url 'createtodo' %}" class="btn btn-warning fw-semibold">Add something new</a>
+        <a href="{% url 'createtodo' %}" class="btn btn-dark fw-semibold">{{ t.todo_current_add }}</a>
       </div>
     </div>
     {% endif %}

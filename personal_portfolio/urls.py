@@ -34,6 +34,9 @@ urlpatterns = [
     # contact
     path('contact/', views.contact, name='contact'),
 
+    # language switcher
+    path('set-language/', views.set_language, name='set_language'),
+
     # auth
     path('signup/', toto_views.signupuser, name='signupuser'),
     path('login/', toto_views.loginuser, name='loginuser'),

@@ -6,14 +6,14 @@
   <div class="col-md-8">
 
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h2 class="fw-bold mb-0">Completed todos ✅</h2>
+      <h2 class="fw-bold mb-0">{{ t.todo_completed_title }}</h2>
     </div>
 
     {% if todos %}
     <div class="d-flex flex-column gap-2">
       {% for todo in todos %}
       <a href="{% url 'viewtodo' todo.id %}" class="text-decoration-none">
-        <div class="card border-0 shadow-sm">
+        <div class="card">
           <div class="card-body py-3 d-flex justify-content-between align-items-center">
             <div>
               {% if todo.important %}<span class="badge bg-danger me-2">!</span>{% endif %}
@@ -27,10 +27,10 @@
     </div>
 
     {% else %}
-    <div class="card border-0 shadow-sm text-center p-5">
+    <div class="card text-center p-5">
       <div style="font-size: 2.5rem;">📋</div>
-      <h4 class="fw-bold mt-3">Nothing here yet</h4>
-      <p class="text-muted">Complete some todos and they'll appear here.</p>
+      <h4 class="fw-bold mt-3">{{ t.todo_completed_empty_title }}</h4>
+      <p class="text-muted">{{ t.todo_completed_empty_desc }}</p>
     </div>
     {% endif %}
 

@@ -8,20 +8,20 @@
 
   <!-- Contact info -->
   <div class="col-md-4">
-    <div class="card border-0 shadow-sm h-100">
+    <div class="card h-100">
       <div class="card-body p-4">
-        <h2 class="fw-bold mb-4">Get in touch</h2>
+        <h2 class="fw-bold mb-4 section-title">{{ t.contact_title }}</h2>
         <ul class="list-unstyled">
           <li class="mb-3">
-            <span class="text-muted small d-block">Mobile</span>
-            <a href="tel:+420739942385" class="text-dark text-decoration-none fw-semibold">+420 739 942 385</a>
+            <span class="text-muted small d-block">{{ t.contact_mobile }}</span>
+            <a href="tel:+420739942385" class="text-decoration-none fw-semibold">+420 739 942 385</a>
           </li>
           <li class="mb-3">
-            <span class="text-muted small d-block">Email</span>
-            <a href="mailto:martinczarkowski@gmail.com" class="text-dark text-decoration-none fw-semibold">martinczarkowski@gmail.com</a>
+            <span class="text-muted small d-block">{{ t.contact_email_label }}</span>
+            <a href="mailto:martinczarkowski@gmail.com" class="text-decoration-none fw-semibold">martinczarkowski@gmail.com</a>
           </li>
           <li class="mb-3">
-            <span class="text-muted small d-block">Location</span>
+            <span class="text-muted small d-block">{{ t.contact_location }}</span>
             <span class="fw-semibold">Brno, Czech Republic</span>
           </li>
         </ul>
@@ -36,18 +36,18 @@
   <!-- Contact form -->
   <div class="col-md-5">
     {% if message %}
-    <div class="card border-0 shadow-sm h-100">
+    <div class="card h-100">
       <div class="card-body p-4 text-center d-flex flex-column justify-content-center">
         <div style="font-size: 3rem;">🎉</div>
-        <h3 class="fw-bold mt-3">Thanks for your message!</h3>
-        <p class="text-muted">I'll reply as soon as possible.</p>
-        <a href="{% url 'home' %}" class="btn btn-dark mt-2">Back to home</a>
+        <h3 class="fw-bold mt-3">{{ t.contact_thanks }}</h3>
+        <p class="text-muted">{{ t.contact_reply }}</p>
+        <a href="{% url 'home' %}" class="btn btn-dark mt-2">{{ t.contact_back }}</a>
       </div>
     </div>
     {% else %}
-    <div class="card border-0 shadow-sm">
+    <div class="card">
       <div class="card-body p-4">
-        <h2 class="fw-bold mb-4">Send a message</h2>
+        <h2 class="fw-bold mb-4 section-title">{{ t.contact_form_title }}</h2>
 
         {% if error %}
         <div class="alert alert-danger">{{ error }}</div>
@@ -56,19 +56,19 @@
         <form method="POST">
           {% csrf_token %}
           <div class="mb-3">
-            <label for="subject" class="form-label fw-semibold">Your name</label>
+            <label for="subject" class="form-label fw-semibold">{{ t.contact_your_name }}</label>
             <input type="text" name="subject" class="form-control" id="subject" placeholder="Martin">
           </div>
           <div class="mb-3">
-            <label for="from_email" class="form-label fw-semibold">Your email</label>
+            <label for="from_email" class="form-label fw-semibold">{{ t.contact_your_email }}</label>
             <input type="email" name="from_email" class="form-control" id="from_email" placeholder="you@example.com">
           </div>
           <div class="mb-4">
-            <label for="message" class="form-label fw-semibold">Message</label>
+            <label for="message" class="form-label fw-semibold">{{ t.contact_message }}</label>
             <textarea class="form-control" name="message" id="message" rows="5" placeholder="Hi Martin..."></textarea>
           </div>
           <div class="d-grid">
-            <button type="submit" class="btn btn-dark fw-semibold">Send message</button>
+            <button type="submit" class="btn btn-dark fw-semibold">{{ t.contact_send }}</button>
           </div>
         </form>
       </div>

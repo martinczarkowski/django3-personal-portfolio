@@ -4,16 +4,16 @@
 
 <div class="row justify-content-center mt-5">
   <div class="col-md-7">
-    <div class="card border-0 shadow-sm text-center p-5">
+    <div class="card text-center p-5">
       <div style="font-size: 3rem;">✅</div>
       <h1 class="fw-bold mt-3">Todo Woo</h1>
-      <p class="text-muted lead mt-2">Life is busy. We get it.<br>
-        <em>Todo Woo</em> helps you focus on what actually matters.
+      <p class="text-muted lead mt-2">{{ t.todo_tagline }}<br>
+        <em>Todo Woo</em> {{ t.todo_desc }}
       </p>
       <div class="mt-4">
-        <a href="{% url 'signupuser' %}" class="btn btn-warning btn-lg fw-semibold px-5">Get started</a>
+        <a href="{% url 'signupuser' %}" class="btn btn-dark btn-lg fw-semibold px-5">{{ t.todo_start }}</a>
       </div>
-      <small class="text-muted mt-3">Already have an account? <a href="{% url 'loginuser' %}">Log in</a></small>
+      <small class="text-muted mt-3">{{ t.todo_have_account }} <a href="{% url 'loginuser' %}">{{ t.todo_login_link }}</a></small>
     </div>
   </div>
 </div>

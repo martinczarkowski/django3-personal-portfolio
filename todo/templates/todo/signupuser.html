@@ -4,10 +4,10 @@
 
 <div class="row justify-content-center mt-5">
   <div class="col-md-5">
-    <div class="card border-0 shadow-sm">
+    <div class="card">
       <div class="card-body p-4">
-        <h2 class="fw-bold mb-1">Create account 🚀</h2>
-        <p class="text-muted mb-4">Start organizing your life today.</p>
+        <h2 class="fw-bold mb-1">{{ t.signup_title }}</h2>
+        <p class="text-muted mb-4">{{ t.signup_subtitle }}</p>
 
         {% if error %}
         <div class="alert alert-danger">{{ error }}</div>
@@ -16,25 +16,25 @@
         <form method="POST">
           {% csrf_token %}
           <div class="mb-3">
-            <label for="username" class="form-label fw-semibold">Username</label>
+            <label for="username" class="form-label fw-semibold">{{ t.signup_username }}</label>
             <input type="text" name="username" class="form-control" id="username" autofocus>
-            <div class="form-text">Must be unique — we'll let you know if it's taken.</div>
+            <div class="form-text text-muted">{{ t.signup_username_help }}</div>
           </div>
           <div class="mb-3">
-            <label for="password1" class="form-label fw-semibold">Password</label>
+            <label for="password1" class="form-label fw-semibold">{{ t.signup_password }}</label>
             <input type="password" name="password1" class="form-control" id="password1">
           </div>
           <div class="mb-4">
-            <label for="password2" class="form-label fw-semibold">Confirm password</label>
+            <label for="password2" class="form-label fw-semibold">{{ t.signup_confirm }}</label>
             <input type="password" name="password2" class="form-control" id="password2">
           </div>
           <div class="d-grid">
-            <button type="submit" class="btn btn-warning fw-semibold">Sign up</button>
+            <button type="submit" class="btn btn-dark fw-semibold">{{ t.signup_btn }}</button>
           </div>
         </form>
 
         <hr>
-        <p class="text-center text-muted mb-0 small">Already have an account? <a href="{% url 'loginuser' %}">Log in here</a></p>
+        <p class="text-center text-muted mb-0 small">{{ t.signup_have_account }} <a href="{% url 'loginuser' %}">{{ t.signup_login_link }}</a></p>
       </div>
     </div>
   </div>
