@@ -28,6 +28,19 @@ a:hover { color: var(--green-text); }
   border-bottom: 1px solid var(--border);
 }
 
+.brand-terminal {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text) !important;
+  letter-spacing: -0.5px;
+}
+.brand-terminal:hover { color: var(--text) !important; }
+.brand-prefix {
+  color: var(--green-text);
+  font-weight: 700;
+}
+
 .navbar-nav .nav-link {
   color: var(--muted) !important;
   font-size: 0.85rem;
