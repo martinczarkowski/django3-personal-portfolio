@@ -1,0 +1,26 @@
+[
+  {
+    "model": "portfolio.project",
+    "pk": 1,
+    "fields": {
+      "title": "Password generator",
+      "title_cs": "Generátor hesel",
+      "description": "A password generator is a software tool that creates random or customized passwords for users.",
+      "description_cs": "Nástroj pro generování náhodných hesel s možností nastavení délky, velkých písmen, číslic a speciálních znaků.",
+      "image": "portfolio/images/password_1.jpg",
+      "url": "http://martinczarkowski.pythonanywhere.com//generator/"
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 5,
+    "fields": {
+      "title": "Todo Woo",
+      "title_cs": "Todo Woo",
+      "description": "A simple task management app built with Django. Features user authentication, task priorities, and completion tracking.",
+      "description_cs": "Jednoduchá aplikace pro správu úkolů vytvořená v Djangu. Obsahuje přihlašování, aktuální i dokončené úkoly a označení důležitých položek.",
+      "image": "portfolio/images/todo.jpg",
+      "url": "http://martinczarkowski.pythonanywhere.com/todolist/"
+    }
+  }
+]
