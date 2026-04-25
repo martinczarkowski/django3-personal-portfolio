@@ -1,19 +1,21 @@
 {% extends "todo/base.html" %}
 
 {% block content %}
-<br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-<div class="row justify-content-center mt-5">
-        <div class="col-md-7 text-center">
 
-                 <h1>Simply Your Todos!</h1>
-            <p>Life is fun. But life is also busy. There's a million different things you could be doing. But what matters is <u>what</u> you do. We created <b><i>Todo Woo</i></b> to help you make sense of all of your opportunities and live that life that matters most to you. Your new organized life awaits.</p>
-        <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">Start</a>
-        </div>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-7">
+    <div class="card border-0 shadow-sm text-center p-5">
+      <div style="font-size: 3rem;">✅</div>
+      <h1 class="fw-bold mt-3">Todo Woo</h1>
+      <p class="text-muted lead mt-2">Life is busy. We get it.<br>
+        <em>Todo Woo</em> helps you focus on what actually matters.
+      </p>
+      <div class="mt-4">
+        <a href="{% url 'signupuser' %}" class="btn btn-warning btn-lg fw-semibold px-5">Get started</a>
+      </div>
+      <small class="text-muted mt-3">Already have an account? <a href="{% url 'loginuser' %}">Log in</a></small>
     </div>
+  </div>
+</div>
 
 {% endblock %}

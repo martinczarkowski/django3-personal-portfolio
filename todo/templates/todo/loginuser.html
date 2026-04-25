@@ -1,34 +1,38 @@
 {% extends "todo/base.html" %}
 
 {% block content %}
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
-            <h2>Login</h2>
-        </div>
+
+<div class="row justify-content-center mt-5">
+  <div class="col-md-5">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="fw-bold mb-1">Welcome back 👋</h2>
+        <p class="text-muted mb-4">Log in to see your todos.</p>
+
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="username" class="form-label fw-semibold">Username</label>
+            <input type="text" name="username" class="form-control" id="username" autofocus>
+          </div>
+          <div class="mb-4">
+            <label for="password" class="form-label fw-semibold">Password</label>
+            <input type="password" name="password" class="form-control" id="password">
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-warning fw-semibold">Log in</button>
+          </div>
+        </form>
+
+        <hr>
+        <p class="text-center text-muted mb-0 small">No account yet? <a href="{% url 'signupuser' %}">Sign up here</a></p>
+      </div>
     </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
-            {% if error %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endif %}
-            <form method="POST">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control" id="username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control" id="password">
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-            <hr>
-            <div class="text-center">
-                Need an account? <a href="{% url 'signupuser' %}">Sign Up here</a>
-            </div>
-        </div>
-    </div>
+  </div>
+</div>
+
 {% endblock %}

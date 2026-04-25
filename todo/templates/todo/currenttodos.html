@@ -1,30 +1,47 @@
 {% extends "todo/base.html" %}
 
 {% block content %}
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-10">
-            {% if todos %}
-                 <h1>{{ todos.count }} Current Todo{{ todos.count|pluralize }}</h1>
-            {% else %}
-                           <h1>Current Todos</h1>
-            {% endif %}
-        </div>
+
+<div class="row justify-content-center mt-5">
+  <div class="col-md-8">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-bold mb-0">
+        {% if todos %}{{ todos.count }} current todo{{ todos.count|pluralize }}{% else %}Current todos{% endif %}
+      </h2>
+      <a href="{% url 'createtodo' %}" class="btn btn-warning fw-semibold">+ New todo</a>
     </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-10">
-        {% if todos %}
-            <div class="list-group">
-                {% for todo in todos %}
-                    <a href="{% url 'viewtodo' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}"><b>{{ todo.title }}</b>{% if todo.memo %} - {{ todo.memo|truncatechars:30 }}{% endif %}</a>
-                {% endfor %}
+
+    {% if todos %}
+    <div class="d-flex flex-column gap-2">
+      {% for todo in todos %}
+      <a href="{% url 'viewtodo' todo.id %}" class="text-decoration-none">
+        <div class="card border-0 shadow-sm {% if todo.important %}border-start border-danger border-3{% endif %}">
+          <div class="card-body py-3 d-flex justify-content-between align-items-center">
+            <div>
+              {% if todo.important %}<span class="badge bg-danger me-2">!</span>{% endif %}
+              <span class="fw-semibold text-dark">{{ todo.title }}</span>
+              {% if todo.memo %}<span class="text-muted ms-2 small">— {{ todo.memo|truncatechars:40 }}</span>{% endif %}
             </div>
-        {% else %}
-            <div class="text-center">
-                <h2>Looks like you don't have any todos! Nice work.</h2>
-            <br>
-            <a role="button" class="btn btn-primary" href="{% url 'createtodo' %}">New Todo</a>
-            </div>
-        {% endif %}
+            <span class="text-muted small">›</span>
+          </div>
         </div>
+      </a>
+      {% endfor %}
     </div>
+
+    {% else %}
+    <div class="card border-0 shadow-sm text-center p-5">
+      <div style="font-size: 2.5rem;">🎉</div>
+      <h4 class="fw-bold mt-3">All clear!</h4>
+      <p class="text-muted">You have no pending todos. Nice work.</p>
+      <div>
+        <a href="{% url 'createtodo' %}" class="btn btn-warning fw-semibold">Add something new</a>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
 {% endblock %}

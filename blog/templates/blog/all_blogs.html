@@ -4,20 +4,38 @@
 
 {% block content %}
 
-<h1 id="blogtitle" class="fw-bold text-center">Blog</h1>
-
-<h3 class="text-center mb-5">Martin has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
-
-{% for blog in blogs %}
-<div class="row justify-content-center my-3">
-  <div class="col-md-10">
-    <a href="{% url 'blog:detail' blog.id %}">
-      <h2>{{ blog.title }}</h2>
-    </a>
-    <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
-    <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+<div class="d-flex justify-content-between align-items-center mt-5 mb-4">
+  <div>
+    <h1 class="fw-bold mb-0">Blog</h1>
+    <p class="text-muted mb-0">{{ blogs.count }} post{{ blogs.count|pluralize }}</p>
   </div>
 </div>
-{% endfor %}
+<hr class="mb-4">
+
+{% if blogs %}
+<div class="row g-4">
+  {% for blog in blogs %}
+  <div class="col-md-6">
+    <div class="card h-100 border-0 shadow-sm">
+      <div class="card-body p-4">
+        <small class="text-muted">{{ blog.date|date:'M d, Y'|upper }}</small>
+        <h4 class="fw-semibold mt-1">
+          <a href="{% url 'blog:detail' blog.id %}" class="text-dark text-decoration-none">{{ blog.title }}</a>
+        </h4>
+        <p class="text-muted">{{ blog.description|striptags|truncatewords:30 }}</p>
+      </div>
+      <div class="card-footer bg-transparent border-0 pb-3 px-4">
+        <a href="{% url 'blog:detail' blog.id %}" class="btn btn-sm btn-outline-dark">Read more</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% else %}
+<div class="card border-0 shadow-sm text-center p-5">
+  <p class="text-muted mb-0">No posts yet. Check back soon.</p>
+</div>
+{% endif %}
 
 {% endblock %}
