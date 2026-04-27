@@ -43,13 +43,13 @@ urlpatterns = [
     path('logout/', toto_views.logoutuser, name='logoutuser'),
 
     # todo
-    path('todolist', toto_views.todolist, name='todolist'),
+    path('todolist/', toto_views.todolist, name='todolist'),
     path('create/', toto_views.createtodo, name='createtodo'),
     path('current/', toto_views.currenttodos, name='currenttodos'),
     path('completed/', toto_views.completedtodos, name='completedtodos'),
-    path('todo/<int:todo_pk>', toto_views.viewtodo, name='viewtodo'),
-    path('todo/<int:todo_pk>/complete', toto_views.completetodo, name='completetodo'),
-    path('todo/<int:todo_pk>/delete', toto_views.deletetodo, name='deletetodo'),
+    path('todo/<int:todo_pk>/', toto_views.viewtodo, name='viewtodo'),
+    path('todo/<int:todo_pk>/complete/', toto_views.completetodo, name='completetodo'),
+    path('todo/<int:todo_pk>/delete/', toto_views.deletetodo, name='deletetodo'),
 
 ]
 
