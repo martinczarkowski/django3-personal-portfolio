@@ -4,6 +4,7 @@
   --surface:   #161b22;
   --border:    #30363d;
   --text:      #cdd9e5;
+  --body-text: #adbac7;
   --muted:     #768390;
   --green:     #238636;
   --green-text:#57ab5a;
@@ -170,7 +171,7 @@ hr { border-color: var(--border) !important; opacity: 1; }
 code        { color: var(--green-text); background: var(--bg); padding: 2px 6px; border-radius: 4px; }
 
 h1, h2, h3, h4, h5, h6 { color: var(--text) !important; }
-p, li, td, th { color: var(--text) !important; }
+p, li, td, th { color: var(--body-text) !important; }
 
 /* ── Footer ── */
 .footer {
