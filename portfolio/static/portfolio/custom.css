@@ -13,11 +13,20 @@
   --yellow:    #c69026;
 }
 
+html {
+  scroll-padding-top: 80px;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* ── Inline color helpers (replace inline styles) ── */
+.text-body-sub { color: var(--body-text) !important; }
+.link-blue { color: var(--blue) !important; }
+.link-blue:hover { color: var(--green-text) !important; }
 
 /* ── Links ── */
 a { color: var(--blue); }
@@ -27,6 +36,10 @@ a:hover { color: var(--green-text); }
 #topNav {
   background-color: var(--surface) !important;
   border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .brand-terminal {

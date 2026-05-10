@@ -9,10 +9,10 @@
     <img src="{% static 'portfolio/me.jpg' %}" class="img-fluid rounded-circle" style="max-width: 220px; border: 3px solid #3fb950;">
   </div>
   <div class="col-md-9">
-    <p class="mb-1" style="color:#8b949e; font-size:0.85rem;">{{ t.hero_comment }}</p>
+    <p class="mb-1 text-body-sub small">{{ t.hero_comment }}</p>
     <h1 class="fw-bold mb-2" id="hometext">{{ t.hero_title }} <span class="typing-cursor"></span></h1>
-    <p class="mb-2 hero-prompt" style="color:#8b949e;">{{ t.hero_tagline }}</p>
-    <p class="mb-3" style="color:#8b949e; font-size:0.9rem;">{{ t.hero_role|safe }}<br>{{ t.hero_desc }}</p>
+    <p class="mb-2 hero-prompt text-body-sub">{{ t.hero_tagline }}</p>
+    <p class="mb-3 text-body-sub" style="font-size:0.9rem;">{{ t.hero_role|safe }}<br>{{ t.hero_desc }}</p>
     <div class="d-flex gap-2 mb-3">
       <a href="{% static 'portfolio/cv_czarkowski_en.pdf' %}" target="_blank" class="btn btn-dark btn-sm">{{ t.hero_cv_en }}</a>
       <a href="{% static 'portfolio/cv_czarkowski_cz.pdf' %}" target="_blank" class="btn btn-outline-dark btn-sm">{{ t.hero_cv_cz }}</a>
@@ -75,7 +75,7 @@
       <div class="card-body">
         <small class="text-muted">{{ blog.date }}</small>
         <h5 class="card-title fw-semibold mt-1">
-          <a href="{% url 'blog:detail' blog.id %}" class="text-decoration-none" style="color:#58a6ff;">{{ blog.title }}</a>
+          <a href="{% url 'blog:detail' blog.id %}" class="text-decoration-none link-blue">{{ blog.title }}</a>
         </h5>
         <p class="card-text text-muted">{{ blog.description|striptags|truncatewords:25 }}</p>
       </div>
